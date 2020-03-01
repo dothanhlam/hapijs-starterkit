@@ -32,6 +32,9 @@ internals.config = {
         production: 'http://localhost:8000',
         $default: 'http://127.0.0.1:8000'
     },
+
+    /*tobe expired */
+    /*
     mongoose: {
         $filter: 'env',
         production: {
@@ -44,7 +47,30 @@ internals.config = {
             uri: process.env.DATABASE_URL,
             options: {}
         }
+    }, */
+    
+    mysql: {
+        $filter: 'env',
+        production: {
+            host: process.env.DB_HOST,
+            port: process.env.DB_PORT,
+            database: process.env.DB_NAME,
+            user: process.env.DB_USERNAME,
+            password: process.env.DB_PASSWORD,
+        },
+        test: {
+            uri:'mongodb://localhost:27017/testdb'
+        },
+        $default: {
+            host: process.env.DB_HOST,
+            port: process.env.DB_PORT,
+            database: process.env.DB_NAME,
+            user: process.env.DB_USERNAME,
+            password: process.env.DB_PASSWORD,
+            options: {}
+        }
     },
+
     email: {
         host : process.env.MAIL_HOST,
         port : process.env.MAIL_PORT,

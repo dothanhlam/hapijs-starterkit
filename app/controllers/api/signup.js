@@ -4,7 +4,7 @@ var JWT   = require('jsonwebtoken');
 const Joi = require('joi');
 const Config = require('../../../config/config');
 const Mongoose = require('mongoose');
-const User = Mongoose.model('User');
+//const User = Mongoose.model('User');
 const signupHelper = require('../../helpers/signup');
 
 /* ================================== Controllers for V1 ============================== */

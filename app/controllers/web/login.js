@@ -1,8 +1,5 @@
 'use strict';
-
-const Mongoose = require('mongoose');
 const Joi = require('joi');
-const User = Mongoose.model('User');
 const loginHelper = require('../../helpers/login');
 
 exports.showForm = {
@@ -53,7 +50,7 @@ exports.postForm = {
             if (request.auth.isAuthenticated) {
                 return h.redirect('/dashboard');
             }
-            let resultData = await loginHelper.findByCredentials(request.payload.email, request.payload.password); 
+            let resultData = await loginHelper.findByCredentials(request); 
             if (resultData.statusCode === 200) {
                     request.cookieAuth.set(resultData.user);
                     return h.redirect('/dashboard');

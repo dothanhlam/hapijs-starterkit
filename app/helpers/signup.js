@@ -1,6 +1,6 @@
 'use strict';
 const Mongoose = require('mongoose');
-const User = Mongoose.model('User');
+//const User = Mongoose.model('User');
 
 exports.signUpUser = async function (userData) {
     return new Promise(async function (resolve, reject) {

@@ -38,11 +38,16 @@ internals.manifest = {
             options: Config.get('/email')
         },
         //  MongoDB connector 
-        {
+      /*  {
             plugin : './lib/mongoose',
             options: Config.get('/mongoose')
             
+        }, */
+        {
+            plugin: './lib/mysql',
+            options: Config.get('/mysql')
         },
+
         // Logging connector 
         {
             plugin:  'good',

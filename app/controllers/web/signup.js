@@ -3,7 +3,7 @@
 const Mongoose = require('mongoose');
 const Joi = require('joi');
 const Boom = require('boom');
-const User = Mongoose.model('User');
+//const User = Mongoose.model('User');
 const signupHelper = require('../../helpers/signup');
 
 exports.showForm = {

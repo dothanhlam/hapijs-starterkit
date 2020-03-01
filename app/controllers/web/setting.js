@@ -1,6 +1,6 @@
 
 const Mongoose = require('mongoose');
-const User = Mongoose.model('User');
+//const User = Mongoose.model('User');
 const Joi = require('joi');
 const Email = require('./email');
 const settingHelper = require('../../helpers/setting');
