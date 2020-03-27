@@ -1,6 +1,4 @@
 'use strict';
-const Mongoose = require('mongoose');
-//const User = Mongoose.model('User');
 const Crypto = require('crypto');
 
 

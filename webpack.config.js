@@ -2,7 +2,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const nodeExternals = require('webpack-node-externals');
 const Webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -21,14 +20,16 @@ var jsConfig = {
     },
     entry: {
         vendor: ['jquery','bootstrap','chart.js'],
-        bundle: path.join(__dirname, './assets/scripts/index.js')
+        bundle: path.join(__dirname, './assets/scripts/index.js'),
     },
     output: {
         path: path.join(__dirname, './.build/js'),
         filename: '[name].js'
     },   
-    cache: true,
+    
+    cache: false,
     devtool: false,
+
     module: {
         rules: [
             {
@@ -40,9 +41,15 @@ var jsConfig = {
                     }
                 },
                 exclude: /(node_modules|bower_components)/
+            },
+            { 
+                test: /\.handlebars$/,
+                loader: "handlebars-loader" 
             }
+
         ]
     },
+
     plugins: [
         new UglifyJsPlugin({
             cache: true,
@@ -69,8 +76,9 @@ var jsConfig = {
                 from: path.join(__dirname, './assets/images'),
                 to: path.join(__dirname, './.build/images')
             }
-        ])
-    ]
+        ]),
+        new Webpack.NoEmitOnErrorsPlugin()
+        ]
 }
 
 var scssConfig = {
@@ -88,7 +96,7 @@ var scssConfig = {
     output: {
         path: path.join(__dirname, './.build/css')
     },
-    cache: true,
+    cache: false,
     devtool: false,
     module: {
         rules: [
@@ -123,7 +131,7 @@ var scssConfig = {
         new MiniCssExtractPlugin({
             filename: 'index.css'
         }),
-        new OptimizeCSSAssetsPlugin({})
+        new OptimizeCSSAssetsPlugin({}),
     ]
 }
 module.exports = [jsConfig, scssConfig]

@@ -166,6 +166,24 @@ internals.manifest = {
         {
             plugin: './app/routes/webApi/setting.js'
         },
+        {
+            plugin: './app/routes/webApi/services.js'
+        },
+        {
+            plugin: './app/routes/webApi/customers.js'
+        },
+        {
+            plugin: './app/routes/webApi/departments.js'
+        },
+        {
+            plugin: './app/routes/webApi/apartments.js'
+        },
+        {
+            plugin: './app/routes/webApi/calendar.js'
+        },
+        {
+            plugin: './app/routes/webApi/information.js'
+        },
         /* ----------------- End web apiroutes  -------------- */
 
         /* ----------------- Start mobile api routes -------------- */

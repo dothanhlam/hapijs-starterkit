@@ -16,7 +16,7 @@ internals.config = {
     title: {
         $filter: 'env',
         test: 'Hapi.js-Starterkit-test',
-        production: 'Hapi.js-Starterkit',
+        production: 'AMS - Apartment Management System',
         $default: Pkg.name
     },
     keywords: {

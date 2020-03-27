@@ -1,6 +1,4 @@
 'use strict';
-const Mongoose = require('mongoose');
-//const User = Mongoose.model('User');
 const Joi = require('joi');
 
 // Helper method for finding user details can be called from web and mobile api controller.

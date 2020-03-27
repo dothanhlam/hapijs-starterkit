@@ -2,7 +2,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
 const server = require('../../server');
-const mongoose = require('mongoose');
 
 const Wreck = require('wreck');
 const rp = require('request-promise');

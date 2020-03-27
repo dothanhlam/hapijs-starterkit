@@ -1,7 +1,5 @@
 'use strict';
-const Mongoose = require('mongoose');
 const Joi = require('joi');
-//const User = Mongoose.model('User');
 
 exports.connect = function(provider) {
     // Return config object for hapi route
